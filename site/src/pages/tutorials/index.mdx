@@ -50,7 +50,7 @@ $ yarn preconstruct init
   "name": "a-random-number",
   "version": "1.0.0",
   "main": "dist/a-random-number.cjs.js",
-  "module": "dist/a-random-number.esm.js",
+  "module": "dist/a-random-number.mjs",
   "license": "MIT",
   "devDependencies": {
     "preconstruct": "^0.0.68"
@@ -59,6 +59,7 @@ $ yarn preconstruct init
 ```
 
 <details>
+
 
 <summary>What does all this mean?</summary>
 
@@ -69,12 +70,13 @@ $ yarn preconstruct init
 The `main` field specifies what file Node and older bundlers should look at when someone uses your package. Preconstruct has automatically set it to `dist/a-random-number.cjs.js` which is based on the package name `a-random-number`.
 
 ```json
-"module": "dist/a-random-number.esm.js",
+"module": "dist/a-random-number.mjs",
 ```
 
 The `module` field specifies what file newer bundlers like webpack should look at when someone uses your package.
 
 </details>
+
 
 ## We need to compile our code with Babel
 

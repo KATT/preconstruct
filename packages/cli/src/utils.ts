@@ -127,7 +127,7 @@ export const validFieldsFromPkg = {
     forceStrategy?: DistFilenameStrategy
   ) {
     let safeName = getDistName(pkg, entrypointName, forceStrategy);
-    return `dist/${safeName}.esm.js`;
+    return `dist/${safeName}.mjs`;
   },
   "umd:main"(
     pkg: Package,
@@ -149,7 +149,7 @@ export const validFieldsFromPkg = {
       [`./dist/${safeName}.cjs.js`]: `./dist/${safeName}.browser.cjs.js`,
     };
     if (hasModuleBuild) {
-      obj[`./dist/${safeName}.esm.js`] = `./dist/${safeName}.browser.esm.js`;
+      obj[`./dist/${safeName}.mjs`] = `./dist/${safeName}.browser.mjs`;
     }
     return obj;
   },

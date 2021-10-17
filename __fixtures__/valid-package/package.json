@@ -4,7 +4,7 @@
   "main": "dist/valid-package.cjs.js",
   "license": "MIT",
   "private": true,
-  "module": "dist/valid-package.esm.js",
+  "module": "dist/valid-package.mjs",
   "umd:main": "dist/valid-package.umd.min.js",
   "preconstruct": {
     "umdName": "validPackage"

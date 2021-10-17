@@ -37,7 +37,7 @@ test("typescript thing", async () => {
     "package.json": JSON.stringify({
       name: "weird-typescript-thing",
       main: "dist/weird-typescript-thing.cjs.js",
-      module: "dist/weird-typescript-thing.esm.js",
+      module: "dist/weird-typescript-thing.mjs",
 
       dependencies: {
         "@babel/runtime": "^7.8.7",
@@ -108,7 +108,7 @@ test("typescript declarationMap", async () => {
     "package.json": JSON.stringify({
       name: "typescript-declarationMap",
       main: "dist/typescript-declarationMap.cjs.js",
-      module: "dist/typescript-declarationMap.esm.js",
+      module: "dist/typescript-declarationMap.mjs",
 
       dependencies: {
         "@babel/runtime": "^7.8.7",
@@ -175,7 +175,7 @@ test("typescript declarationMap", async () => {
             module.exports = require("./typescript-declarationMap.cjs.dev.js");
           }
 
-          ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/typescript-declarationMap.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+          ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/typescript-declarationMap.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
           const thing = "wow";
 
           export { thing };
@@ -322,7 +322,7 @@ test("imports helpers from @babel/runtime without @babel/plugin-transform-runtim
     "package.json": JSON.stringify({
       name: "test",
       main: "dist/test.cjs.js",
-      module: "dist/test.esm.js",
+      module: "dist/test.mjs",
       dependencies: {
         "@babel/runtime": "7",
       },
@@ -362,7 +362,7 @@ test("imports helpers from @babel/runtime without @babel/plugin-transform-runtim
       module.exports = require("./test.cjs.dev.js");
     }
 
-    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/test.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/test.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     import _classCallCheck from '@babel/runtime/helpers/esm/classCallCheck';
 
     var Other = function Other() {
@@ -383,7 +383,7 @@ test("imports helpers from @babel/runtime-corejs2 without @babel/plugin-transfor
     "package.json": JSON.stringify({
       name: "test",
       main: "dist/test.cjs.js",
-      module: "dist/test.esm.js",
+      module: "dist/test.mjs",
       dependencies: {
         "@babel/runtime-corejs2": "7",
       },
@@ -423,7 +423,7 @@ test("imports helpers from @babel/runtime-corejs2 without @babel/plugin-transfor
       module.exports = require("./test.cjs.dev.js");
     }
 
-    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/test.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/test.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     import _classCallCheck from '@babel/runtime-corejs2/helpers/esm/classCallCheck';
 
     var Other = function Other() {
@@ -444,7 +444,7 @@ test("imports helpers from @babel/runtime-corejs3 without @babel/plugin-transfor
     "package.json": JSON.stringify({
       name: "test",
       main: "dist/test.cjs.js",
-      module: "dist/test.esm.js",
+      module: "dist/test.mjs",
       dependencies: {
         "@babel/runtime-corejs3": "7",
       },
@@ -484,7 +484,7 @@ test("imports helpers from @babel/runtime-corejs3 without @babel/plugin-transfor
       module.exports = require("./test.cjs.dev.js");
     }
 
-    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/test.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/test.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     import _classCallCheck from '@babel/runtime-corejs3/helpers/esm/classCallCheck';
 
     var Other = function Other() {
@@ -826,7 +826,7 @@ test("new dist filenames", async () => {
     "package.json": JSON.stringify({
       name: "@scope/test",
       main: "dist/scope-test.cjs.js",
-      module: "dist/scope-test.esm.js",
+      module: "dist/scope-test.mjs",
     }),
     "src/index.js": js`
                       export default "something";
@@ -852,7 +852,7 @@ test("new dist filenames", async () => {
             module.exports = require("./scope-test.cjs.dev.js");
           }
 
-          ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/scope-test.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+          ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/scope-test.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
           var index = "something";
 
           export default index;

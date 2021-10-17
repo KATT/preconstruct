@@ -25,10 +25,10 @@ test("browser", async () => {
     "package.json": JSON.stringify({
       name: "browser",
       main: "dist/browser.cjs.js",
-      module: "dist/browser.esm.js",
+      module: "dist/browser.mjs",
       browser: {
         "./dist/browser.cjs.js": "./dist/browser.browser.cjs.js",
-        "./dist/browser.esm.js": "./dist/browser.browser.esm.js",
+        "./dist/browser.mjs": "./dist/browser.browser.mjs",
       },
     }),
     "src/index.js": js`
@@ -67,7 +67,7 @@ test("browser", async () => {
 
     exports.default = thing$1;
 
-    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/browser.browser.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/browser.browser.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     let thing = "wow";
 
     {
@@ -110,7 +110,7 @@ test("browser", async () => {
       module.exports = require("./browser.cjs.dev.js");
     }
 
-    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/browser.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/browser.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     let thing = "wow";
 
     if (typeof window !== "undefined") {
@@ -230,7 +230,7 @@ test("typescript", async () => {
       module.exports = require("./typescript.cjs.dev.js");
     }
 
-    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/typescript.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/typescript.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     import * as path from 'path';
     export { path };
 
@@ -249,7 +249,7 @@ test("typescript with forced dts emit", async () => {
     "package.json": JSON.stringify({
       name: "typescript-force-dts-emit",
       main: "dist/typescript-force-dts-emit.cjs.js",
-      module: "dist/typescript-force-dts-emit.esm.js",
+      module: "dist/typescript-force-dts-emit.mjs",
 
       dependencies: {
         "@babel/runtime": "^7.8.7",
@@ -480,7 +480,7 @@ test("using external @babel/runtime helpers", async () => {
     "package.json": JSON.stringify({
       name: "external-babel-runtime",
       main: "dist/external-babel-runtime.cjs.js",
-      module: "dist/external-babel-runtime.esm.js",
+      module: "dist/external-babel-runtime.mjs",
 
       dependencies: {
         "@babel/runtime": "^7.0.0",

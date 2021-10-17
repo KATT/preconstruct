@@ -116,8 +116,8 @@ export function getRollupConfigs(pkg: Package, aliases: Aliases) {
         ? [
             {
               format: "es" as const,
-              entryFileNames: "[name].esm.js",
-              chunkFileNames: "dist/[name]-[hash].esm.js",
+              entryFileNames: "[name].mjs",
+              chunkFileNames: "dist/[name]-[hash].mjs",
               dir: pkg.directory,
             },
           ]
@@ -197,8 +197,8 @@ export function getRollupConfigs(pkg: Package, aliases: Aliases) {
           ? [
               {
                 format: "es" as const,
-                entryFileNames: "[name].browser.esm.js",
-                chunkFileNames: "dist/[name]-[hash].browser.esm.js",
+                entryFileNames: "[name].browser.mjs",
+                chunkFileNames: "dist/[name]-[hash].browser.mjs",
                 dir: pkg.directory,
               },
             ]

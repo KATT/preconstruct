@@ -33,7 +33,7 @@ exports.default = index;
 "
 `;
 
-exports[`basic: valid-package.esm.js 1`] = `
+exports[`basic: valid-package.mjs 1`] = `
 "var index = \\"something\\";
 
 export default index;
@@ -109,7 +109,7 @@ exports.thing = thing$1;
 "
 `;
 
-exports[`typescript thing: weird-typescript-thing.esm.js 1`] = `
+exports[`typescript thing: weird-typescript-thing.mjs 1`] = `
 "const thing = () => \\"wow\\";
 
 const makeThing = () => thing();

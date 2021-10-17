@@ -95,7 +95,7 @@ test("flow", async () => {
     "package.json": JSON.stringify({
       name: "flow",
       main: "dist/flow.cjs.js",
-      module: "dist/flow.esm.js",
+      module: "dist/flow.mjs",
     }),
     "babel.config.json": JSON.stringify({
       presets: [require.resolve("@babel/preset-flow")],
@@ -128,7 +128,7 @@ test("flow", async () => {
     "package.json": JSON.stringify({
       name: "flow-export-default",
       main: "dist/flow-export-default.cjs.js",
-      module: "dist/flow-export-default.esm.js",
+      module: "dist/flow-export-default.mjs",
     }),
     "babel.config.json": JSON.stringify({
       presets: [require.resolve("@babel/preset-flow")],
@@ -440,7 +440,7 @@ test("json", async () => {
     "package.json": JSON.stringify({
       name: "json-package",
       main: "dist/json-package.cjs.js",
-      module: "dist/json-package.esm.js",
+      module: "dist/json-package.mjs",
     }),
 
     "src/index.js": js`
@@ -488,7 +488,7 @@ test("json", async () => {
       module.exports = require("./json-package.cjs.dev.js");
     }
 
-    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/json-package.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/json-package.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     var changesetsSchema = {
     	$schema: "http://json-schema.org/draft-07/schema#",
     	type: "object",

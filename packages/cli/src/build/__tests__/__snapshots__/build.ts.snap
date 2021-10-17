@@ -49,7 +49,7 @@ exports.something = a;
 "
 `;
 
-exports[`flow: flow.esm.js 1`] = `
+exports[`flow: flow.mjs 1`] = `
 "var a = \\"wow\\";
 
 function doSomething(arg) {
@@ -108,7 +108,7 @@ exports.doSomething = doSomething;
 "
 `;
 
-exports[`flow: flow-export-default.esm.js 1`] = `
+exports[`flow: flow-export-default.mjs 1`] = `
 "function doSomething(arg) {
   return \\"something\\" + arg;
 }
@@ -152,7 +152,7 @@ exports.default = index;
 "
 `;
 
-exports[`monorepo single package: some-scope-package-two-single-package.esm.js 1`] = `
+exports[`monorepo single package: some-scope-package-two-single-package.mjs 1`] = `
 "var index = 2;
 
 export default index;
@@ -336,7 +336,7 @@ exports.default = index;
 "
 `;
 
-exports[`monorepo: some-scope-package-one.esm.js 1`] = `
+exports[`monorepo: some-scope-package-one.mjs 1`] = `
 "var index = 1;
 
 export default index;
@@ -376,7 +376,7 @@ exports.default = index;
 "
 `;
 
-exports[`monorepo: some-scope-package-two.esm.js 1`] = `
+exports[`monorepo: some-scope-package-two.mjs 1`] = `
 "var index = 2;
 
 export default index;

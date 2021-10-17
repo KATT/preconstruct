@@ -223,7 +223,7 @@ exports.createStore = createStore;
 "
 `;
 
-exports[`typescript with forced dts emit: dist/typescript-force-dts-emit.esm.js 1`] = `
+exports[`typescript with forced dts emit: dist/typescript-force-dts-emit.mjs 1`] = `
 "import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 // @ts-ignore (installed during test)
@@ -283,7 +283,7 @@ exports.default = Foo;
 "
 `;
 
-exports[`using external @babel/runtime helpers: dist/external-babel-runtime.esm.js 1`] = `
+exports[`using external @babel/runtime helpers: dist/external-babel-runtime.mjs 1`] = `
 "import _classCallCheck from '@babel/runtime/helpers/esm/classCallCheck';
 
 var Foo = function Foo() {
@@ -300,7 +300,7 @@ Object {
     "@babel/runtime": "^7.0.0",
   },
   "main": "dist/external-babel-runtime.cjs.js",
-  "module": "dist/external-babel-runtime.esm.js",
+  "module": "dist/external-babel-runtime.mjs",
   "name": "external-babel-runtime",
 }
 `;

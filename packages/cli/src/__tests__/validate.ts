@@ -109,7 +109,7 @@ test("valid browser", async () => {
   await modifyPkg(tmpPath, (pkg) => {
     pkg.browser = {
       ["./dist/valid-package.cjs.js"]: "./dist/valid-package.browser.cjs.js",
-      ["./dist/valid-package.esm.js"]: "./dist/valid-package.browser.esm.js",
+      ["./dist/valid-package.mjs"]: "./dist/valid-package.browser.mjs",
     };
   });
 
@@ -162,7 +162,7 @@ test("one-entrypoint-with-browser-field-one-without", async () => {
     "package.json": JSON.stringify({
       name: "one-entrypoint-with-browser-field-one-without",
       main: "dist/one-entrypoint-with-browser-field-one-without.cjs.js",
-      module: "dist/one-entrypoint-with-browser-field-one-without.esm.js",
+      module: "dist/one-entrypoint-with-browser-field-one-without.mjs",
 
       preconstruct: {
         entrypoints: ["index.js", "multiply.js"],
@@ -172,13 +172,12 @@ test("one-entrypoint-with-browser-field-one-without", async () => {
     "multiply/package.json": JSON.stringify({
       main:
         "dist/one-entrypoint-with-browser-field-one-without-multiply.cjs.js",
-      module:
-        "dist/one-entrypoint-with-browser-field-one-without-multiply.esm.js",
+      module: "dist/one-entrypoint-with-browser-field-one-without-multiply.mjs",
       browser: {
         "./dist/one-entrypoint-with-browser-field-one-without-multiply.cjs.js":
           "./dist/one-entrypoint-with-browser-field-one-without-multiply.browser.cjs.js",
-        "./dist/one-entrypoint-with-browser-field-one-without-multiply.esm.js":
-          "./dist/one-entrypoint-with-browser-field-one-without-multiply.browser.esm.js",
+        "./dist/one-entrypoint-with-browser-field-one-without-multiply.mjs":
+          "./dist/one-entrypoint-with-browser-field-one-without-multiply.browser.mjs",
       },
     }),
 
@@ -208,7 +207,7 @@ test("create package.json for an entrypoint", async () => {
     "package.json": JSON.stringify({
       name: "entrypoint-pkg-json-missing",
       main: "dist/entrypoint-pkg-json-missing.cjs.js",
-      module: "dist/entrypoint-pkg-json-missing.esm.js",
+      module: "dist/entrypoint-pkg-json-missing.mjs",
 
       preconstruct: {
         entrypoints: ["index.js", "other.js"],
@@ -232,7 +231,7 @@ test("create package.json for an entrypoint", async () => {
   expect(await getPkg(path.join(tmpPath, "other"))).toMatchInlineSnapshot(`
     Object {
       "main": "dist/entrypoint-pkg-json-missing-other.cjs.js",
-      "module": "dist/entrypoint-pkg-json-missing-other.esm.js",
+      "module": "dist/entrypoint-pkg-json-missing-other.mjs",
     }
   `);
 });
@@ -373,7 +372,7 @@ test("dist not included in package", async () => {
     "package.json": JSON.stringify({
       name: "dist-not-included-in-pkg",
       main: "dist/dist-not-included-in-pkg.cjs.js",
-      module: "dist/dist-not-included-in-pkg.esm.js",
+      module: "dist/dist-not-included-in-pkg.mjs",
       files: ["src"],
     }),
 
@@ -398,7 +397,7 @@ test("entrypoint not included in package", async () => {
     "package.json": JSON.stringify({
       name: "entrypoint-not-included-in-pkg",
       main: "dist/entrypoint-not-included-in-pkg.cjs.js",
-      module: "dist/entrypoint-not-included-in-pkg.esm.js",
+      module: "dist/entrypoint-not-included-in-pkg.mjs",
 
       preconstruct: {
         entrypoints: ["index.js", "multiply.js"],
@@ -409,7 +408,7 @@ test("entrypoint not included in package", async () => {
 
     "multiply/package.json": JSON.stringify({
       main: "dist/entrypoint-not-included-in-pkg.cjs.js",
-      module: "dist/entrypoint-not-included-in-pkg.esm.js",
+      module: "dist/entrypoint-not-included-in-pkg.mjs",
     }),
 
     "src/multiply.js": js`
@@ -460,7 +459,7 @@ test("new entrypoints with old config", async () => {
     "package.json": JSON.stringify({
       name: "pkg",
       main: "dist/pkg.cjs.js",
-      module: "dist/pkg.esm.js",
+      module: "dist/pkg.mjs",
       preconstruct: {
         source: "src/sum",
         entrypoints: [".", "multiply"],
@@ -469,7 +468,7 @@ test("new entrypoints with old config", async () => {
 
     "multiply/package.json": JSON.stringify({
       main: "dist/pkg.cjs.js",
-      module: "dist/pkg.esm.js",
+      module: "dist/pkg.mjs",
 
       preconstruct: {
         source: "../src/multiply.js",

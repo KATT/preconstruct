@@ -236,7 +236,7 @@ export const typescriptFixture = {
   "package.json": JSON.stringify({
     name: "typescript",
     main: "dist/typescript.cjs.js",
-    module: "dist/typescript.esm.js",
+    module: "dist/typescript.mjs",
     dependencies: {
       "@types/node": "^12.7.1",
       typescript: "^3.4.5",
@@ -430,7 +430,7 @@ export const basicPkgJson = (options?: {
   return JSON.stringify({
     name: "pkg",
     main: "dist/pkg.cjs.js",
-    module: options?.module ? "dist/pkg.esm.js" : undefined,
+    module: options?.module ? "dist/pkg.mjs" : undefined,
     ...(options?.umdName && {
       "umd:main": "dist/pkg.umd.min.js",
       preconstruct: {

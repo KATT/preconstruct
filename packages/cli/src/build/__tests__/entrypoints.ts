@@ -17,14 +17,14 @@ test("multiple entrypoints", async () => {
     "package.json": JSON.stringify({
       name: "multiple-entrypoints",
       main: "dist/multiple-entrypoints.cjs.js",
-      module: "dist/multiple-entrypoints.esm.js",
+      module: "dist/multiple-entrypoints.mjs",
       preconstruct: {
         entrypoints: ["index.js", "multiply.js"],
       },
     }),
     "multiply/package.json": JSON.stringify({
       main: "dist/multiple-entrypoints-multiply.cjs.js",
-      module: "dist/multiple-entrypoints-multiply.esm.js",
+      module: "dist/multiple-entrypoints-multiply.mjs",
     }),
     "src/index.js": js`
                       export let sum = (a, b) => a + b;
@@ -55,7 +55,7 @@ test("multiple entrypoints", async () => {
       module.exports = require("./multiple-entrypoints.cjs.dev.js");
     }
 
-    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/multiple-entrypoints.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ dist/multiple-entrypoints.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     let sum = (a, b) => a + b;
 
     export { sum };
@@ -78,7 +78,7 @@ test("multiple entrypoints", async () => {
       module.exports = require("./multiple-entrypoints-multiply.cjs.dev.js");
     }
 
-    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ multiply/dist/multiple-entrypoints-multiply.esm.js ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+    ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ multiply/dist/multiple-entrypoints-multiply.mjs ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     let multiply = (a, b) => a * b;
 
     export { multiply };
@@ -97,7 +97,7 @@ test("two entrypoints, one module, one not", async () => {
     }),
     "multiply/package.json": JSON.stringify({
       main: "dist/two-entrypoints-one-module-one-not-multiply.cjs.js",
-      module: "dist/two-entrypoints-one-module-one-not-multiply.esm.js",
+      module: "dist/two-entrypoints-one-module-one-not-multiply.mjs",
     }),
     "src/index.js": js`
                       export let sum = (a, b) => a + b;
@@ -117,7 +117,7 @@ test("two entrypoints with a common dependency", async () => {
     "package.json": JSON.stringify({
       name: "common-dependency-two-entrypoints",
       main: "dist/common-dependency-two-entrypoints.cjs.js",
-      module: "dist/common-dependency-two-entrypoints.esm.js",
+      module: "dist/common-dependency-two-entrypoints.mjs",
 
       preconstruct: {
         entrypoints: ["index.js", "multiply.js"],
@@ -126,7 +126,7 @@ test("two entrypoints with a common dependency", async () => {
 
     "multiply/package.json": JSON.stringify({
       main: "dist/common-dependency-two-entrypoints-multiply.cjs.js",
-      module: "dist/common-dependency-two-entrypoints-multiply.esm.js",
+      module: "dist/common-dependency-two-entrypoints-multiply.mjs",
     }),
 
     "src/identity.js": js`

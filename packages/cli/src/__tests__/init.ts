@@ -81,7 +81,7 @@ test("set main and module field", async () => {
     Object {
       "license": "MIT",
       "main": "dist/basic-package.cjs.js",
-      "module": "dist/basic-package.esm.js",
+      "module": "dist/basic-package.mjs",
       "name": "basic-package",
       "private": true,
       "version": "1.0.0",
@@ -118,7 +118,7 @@ test("scoped package", async () => {
     Object {
       "license": "MIT",
       "main": "dist/some-scope-some-package.cjs.js",
-      "module": "dist/some-scope-some-package.esm.js",
+      "module": "dist/some-scope-some-package.mjs",
       "name": "@some-scope/some-package",
       "private": true,
       "version": "1.0.0",
@@ -154,7 +154,7 @@ test("monorepo", async () => {
     Object {
       "license": "MIT",
       "main": "dist/some-scope-package-one.cjs.js",
-      "module": "dist/some-scope-package-one.esm.js",
+      "module": "dist/some-scope-package-one.mjs",
       "name": "@some-scope/package-one",
       "private": true,
       "version": "1.0.0",
@@ -165,7 +165,7 @@ test("monorepo", async () => {
     Object {
       "license": "MIT",
       "main": "dist/some-scope-package-two.cjs.js",
-      "module": "dist/some-scope-package-two.esm.js",
+      "module": "dist/some-scope-package-two.mjs",
       "name": "@some-scope/package-two",
       "private": true,
       "version": "1.0.0",
@@ -212,7 +212,7 @@ test("invalid fields", async () => {
     Object {
       "license": "MIT",
       "main": "dist/invalid-fields.cjs.js",
-      "module": "dist/invalid-fields.esm.js",
+      "module": "dist/invalid-fields.mjs",
       "name": "invalid-fields",
       "private": true,
       "version": "1.0.0",
@@ -235,11 +235,11 @@ test("fix browser", async () => {
     Object {
       "browser": Object {
         "./dist/valid-package.cjs.js": "./dist/valid-package.browser.cjs.js",
-        "./dist/valid-package.esm.js": "./dist/valid-package.browser.esm.js",
+        "./dist/valid-package.mjs": "./dist/valid-package.browser.mjs",
       },
       "license": "MIT",
       "main": "dist/valid-package.cjs.js",
-      "module": "dist/valid-package.esm.js",
+      "module": "dist/valid-package.mjs",
       "name": "valid-package",
       "preconstruct": Object {
         "umdName": "validPackage",
@@ -317,7 +317,7 @@ test("three entrypoints, no main, add main and module", async () => {
     ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ one/package.json ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     {
       "main": "dist/something-one.cjs.js",
-      "module": "dist/something-one.esm.js"
+      "module": "dist/something-one.mjs"
     }
 
     ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ package.json ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
@@ -331,13 +331,13 @@ test("three entrypoints, no main, add main and module", async () => {
         ]
       },
       "main": "dist/something.cjs.js",
-      "module": "dist/something.esm.js"
+      "module": "dist/something.mjs"
     }
 
     ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ two/package.json ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
     {
       "main": "dist/something-two.cjs.js",
-      "module": "dist/something-two.esm.js"
+      "module": "dist/something-two.mjs"
     }
 
   `);

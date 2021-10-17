@@ -77,12 +77,12 @@ test("all the build types", async () => {
       "package.json": JSON.stringify({
         name: "all-the-build-types",
         main: "dist/all-the-build-types.cjs.js",
-        module: "dist/all-the-build-types.esm.js",
+        module: "dist/all-the-build-types.mjs",
         browser: {
           "./dist/all-the-build-types.cjs.js":
             "./dist/all-the-build-types.browser.cjs.js",
-          "./dist/all-the-build-types.esm.js":
-            "./dist/all-the-build-types.browser.esm.js",
+          "./dist/all-the-build-types.mjs":
+            "./dist/all-the-build-types.browser.mjs",
         },
       }),
       "src/index.js": js`
@@ -96,9 +96,9 @@ test("all the build types", async () => {
   let distPath = path.join(tmpPath, "dist");
   expect(await fs.readdir(distPath)).toEqual([
     "all-the-build-types.browser.cjs.js",
-    "all-the-build-types.browser.esm.js",
+    "all-the-build-types.browser.mjs",
     "all-the-build-types.cjs.js",
-    "all-the-build-types.esm.js",
+    "all-the-build-types.mjs",
   ]);
 
   expect(
@@ -137,9 +137,9 @@ test("all the build types", async () => {
   `);
 
   let shouldBeCjsThingsToSource = [
-    "all-the-build-types.esm.js",
+    "all-the-build-types.mjs",
     "all-the-build-types.browser.cjs.js",
-    "all-the-build-types.browser.esm.js",
+    "all-the-build-types.browser.mjs",
   ];
 
   await Promise.all(
@@ -156,7 +156,7 @@ test("source maps work", async () => {
     "package.json": JSON.stringify({
       name: "uses-babel-and-throws-error",
       main: "dist/uses-babel-and-throws-error.cjs.js",
-      module: "dist/uses-babel-and-throws-error.esm.js",
+      module: "dist/uses-babel-and-throws-error.mjs",
 
       dependencies: {
         "@babel/core": "^7.4.3",
@@ -210,7 +210,7 @@ test("flow", async () => {
     "package.json": JSON.stringify({
       name: "flow-dev",
       main: "dist/flow-dev.cjs.js",
-      module: "dist/flow-dev.esm.js",
+      module: "dist/flow-dev.mjs",
       preconstruct: {
         entrypoints: ["index.js", "a.js", "b.js"],
       },
@@ -218,12 +218,12 @@ test("flow", async () => {
 
     "a/package.json": JSON.stringify({
       main: "dist/flow-dev-a.cjs.js",
-      module: "dist/flow-dev-a.esm.js",
+      module: "dist/flow-dev-a.mjs",
     }),
 
     "b/package.json": JSON.stringify({
       main: "dist/flow-dev-b.cjs.js",
-      module: "dist/flow-dev-b.esm.js",
+      module: "dist/flow-dev-b.mjs",
     }),
 
     "src/index.js": js`
